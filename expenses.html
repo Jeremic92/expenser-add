@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <title>Expenses</title>
+    </head>
+    <body>
+        <h1>Expenses!!!</h1>
+        <form onsubmit="handlers.addExpense(event)">
+            <label for="number">Number:</label>
+            <input autofocus id="amount" type="number" required>
+            <select id="currency" required>
+                <option value="">Please select</option>
+                <option value="RSD">RSD</option>
+                <option value="RSD">EUR</option>
+                <option value="USD">USD </option>
+                <option value="CHF">CHF</option>
+                <option value="GBP">GBP</option>
+                <option value="SEK">SEK</option>
+                <option value="AUD">AUD</option>
+            </select>
+            <label for="name">Name:</label>
+            <input id="name" type="text" required>
+            <label for="category">Category:</label>
+            <select id="category" required>
+                <option value="">Please select</option>
+                <option value="Groceres">Groceres</option>
+                <option value="Rent">Rent</option>
+                <option value="Bills">Bills</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Transporation">Transporation</option>
+                <option value="Gift">Gift</option>
+            </select>
+            <label for="date">Date:</label>
+            <input id="date" type="date" required>
+            <label for="splurge">Splurge:</label>
+            <input id="splurge" type="range" step="25">
+            <button>Add</button>
+        </form>
+        <hr>
+        <ul></ul>
+        <hr>
+        <form>
+            <label for="choseDay">Choes day:</label>
+            <select onchange="see.createExpensesDay()" id="choseDay" required>
+                <option value="">Please select day</option>
+                <option value="0">Sanday</option>
+                <option value="1">Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">Wednesday</option>
+                <option value="4">Thursday</option>
+                <option value="5">Friday</option>
+                <option value="6">Saturday</option>
+            </select>
+            <lavel for="choseMonth">Chose month:</lavel>
+            <select onchange="see.populateExpneseMonthLabels()" id="choseMonth" required>
+                <option value="">Please select month</option>
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+            </select>
+            <label for="choseCategory">Choes:</label>
+            <select onchange="see.populateExpenseCategoryLabels()" id="choseCategory" required>
+                <option value="">Please select category</option>
+                <option value="0">Groceres</option>
+                <option value="1">Rent</option>
+                <option value="2">Bills</option>
+                <option value="3">Clothes</option>
+                <option value="4">Transporation</option>
+                <option value="5">Gift</option>
+            </select>
+            <br>
+            <label>All expenses for</label>
+            <span id="day"></span>
+            <label> is: <label>
+            <span id="sum"></span>
+            <label>RSD</label>
+            <label> (in percent of all expenses</label>
+            <span id="percentDay"></span>
+            <label>%)</label>
+            <br>
+            <label>All expenses for</label>
+            <span id="month"></span>
+            <label> is: </label>
+            <span id="total"></span>
+            <label>RSD</label>
+            <label> (in percent of all expenses</label>
+            <span id="percentMonth"></span>
+            <label>%)</label>
+            <br>
+            <label>All expenses for</label>
+            <span id="categories"></span>
+            <label> is: </label>
+            <span id="all"></span>
+            <label>RSD</label>
+            <label> (in percent of all expenses</label>
+            <span id="percentCategory"></span>
+            <label>%)</label>
+        </form>
+        <script src="expenses.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </body>
+</hmtl>
